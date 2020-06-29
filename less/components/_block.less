@@ -1,0 +1,104 @@
+// =============================================================================
+//
+// @file _block.less
+// All about the blocks styling
+//
+// =============================================================================
+.issues,
+.news,
+.events {
+  background-color: @white;
+  border-left: 18.5px solid;
+  padding: 14px 18.5px 32.5px;
+  position: relative;
+
+  .block-title {
+    position: relative;
+
+    @media screen and (max-width: @tablet) {
+      &::after {
+        color: @gray;
+        content: '\e900';
+        font-family: 'custom-icons';
+        font-size: 28px;
+        position: absolute;
+        right: 18.5px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease-out;
+      }
+    }
+  }
+  
+
+  .block-content {
+    @media screen and (max-width: @tablet) {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out;
+
+      &.open {
+        max-height: 1000px;
+        transition: max-height 0.5s ease-out;
+      }
+    }
+  }
+
+  @media screen and (max-width: @tablet) {
+    cursor: pointer;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding: 23px 18.5px 22px;
+
+    &.open {
+      .block-title::after {
+        transform: translateY(-50%) rotate(-45deg);
+      }
+    }
+
+    &::before {
+      background-color: @black;
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: 0.05;
+      position: absolute;
+      top: 0;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-out;
+      width: 100%;
+    }
+
+    &:hover {
+      &::before {
+        transform: translateX(0);
+      }
+    }
+  }
+
+}
+
+// Per block styling
+.issues {
+  border-color: @blue;
+
+  .block-title {
+    color: @blue;
+  }
+}
+
+.news {
+  border-color: @blue-green;
+
+  .block-title {
+    color: @blue-green;
+  }
+}
+
+.events {
+  border-color: @orange;
+
+  .block-title {
+    color: @orange;
+  }
+}
