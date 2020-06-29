@@ -1,6 +1,24 @@
-@import 'fonts';
+// =============================================================================
+//
+// @file main.less
+// Main less file
+//
+// =============================================================================
 
-body {
-  font-family: 'Roboto', sans-serif;
-  background-image: url('../img/background.png');
-}
+// Import base
+@import 'base/_reset.less';
+@import 'base/_global.less';
+@import 'base/_typography.less';
+
+// Import libraries
+@import 'libs/_fonts.less';
+
+// Import utils
+@import 'utils/_variables.less';
+
+// Import layout code
+@import 'layout/_grid.less';
+
+// Import components
+@import 'components/_block.less';
+@import 'components/_post.less';
