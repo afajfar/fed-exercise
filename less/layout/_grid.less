@@ -16,7 +16,7 @@
     margin-left: @spacing;
     min-width: ~"calc(@{one-third-percent} - @{spacing})";
 
-    @media screen and (max-width: @tablet) {
+    @media only screen and (max-width: @tablet) {
         flex: 1 0 ~"calc(100% - @{spacing})";
         margin-left: @spacing;
         min-width: ~"calc(100% - @{spacing})";
@@ -26,9 +26,14 @@
 .container() {
     max-width: @container-max-width;
     margin: 0 auto;
+    padding: 81px 0;
 
-    @media screen and (max-width: @tablet) {
-        padding: 0 42px;
+    @media only screen and (max-width: @tablet) {
+        padding: 81px 42px 0;
+    }
+
+    @media only screen and (max-width: @mobile) {
+        padding: 81px 20px 0;
     }
 }
 

@@ -155,7 +155,7 @@ p {
   margin-left: 36px;
   min-width: calc(33% - 36px);
 }
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .trifecta {
     flex: 1 0 calc(100% - 36px);
     margin-left: 36px;
@@ -165,10 +165,16 @@ p {
 .page-center {
   max-width: 1235px;
   margin: 0 auto;
+  padding: 81px 0;
 }
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .page-center {
-    padding: 0 42px;
+    padding: 81px 42px 0;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .page-center {
+    padding: 81px 20px 0;
   }
 }
 .issues,
@@ -176,7 +182,7 @@ p {
 .events {
   background-color: #fff;
   border-left: 18.5px solid;
-  padding: 14px 18.5px 32.5px;
+  padding: 14px 23px 32.5px 18.5px;
   position: relative;
 }
 .issues .block-title,
@@ -184,22 +190,28 @@ p {
 .events .block-title {
   position: relative;
 }
-@media screen and (max-width: 768px) {
+.issues .block-title::after,
+.news .block-title::after,
+.events .block-title::after {
+  color: #595959;
+  content: '\e900';
+  display: none;
+  font-family: 'custom-icons';
+  font-size: 28px;
+  position: absolute;
+  right: 18.5px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease-out;
+}
+@media only screen and (max-width: 768px) {
   .issues .block-title::after,
   .news .block-title::after,
   .events .block-title::after {
-    color: #595959;
-    content: '\e900';
-    font-family: 'custom-icons';
-    font-size: 28px;
-    position: absolute;
-    right: 18.5px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.3s ease-out;
+    display: block;
   }
 }
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .issues .block-content,
   .news .block-content,
   .events .block-content {
@@ -214,7 +226,7 @@ p {
     transition: max-height 0.5s ease-out;
   }
 }
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .issues,
   .news,
   .events {
@@ -254,16 +266,25 @@ p {
 .issues .block-title {
   color: #225378;
 }
+.issues .block-title::after {
+  color: #225378;
+}
 .news {
   border-color: #1695A3;
 }
 .news .block-title {
   color: #1695A3;
 }
+.news .block-title::after {
+  color: #1695A3;
+}
 .events {
   border-color: #EB7F00;
 }
 .events .block-title {
+  color: #EB7F00;
+}
+.events .block-title::after {
   color: #EB7F00;
 }
 .node-type-post.node-teaser {

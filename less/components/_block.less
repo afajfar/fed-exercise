@@ -9,30 +9,33 @@
 .events {
   background-color: @white;
   border-left: 18.5px solid;
-  padding: 14px 18.5px 32.5px;
+  padding: 14px 23px 32.5px 18.5px;
   position: relative;
 
   .block-title {
     position: relative;
 
-    @media screen and (max-width: @tablet) {
-      &::after {
-        color: @gray;
-        content: '\e900';
-        font-family: 'custom-icons';
-        font-size: 28px;
-        position: absolute;
-        right: 18.5px;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: transform 0.3s ease-out;
+    &::after {
+      color: @gray;
+      content: '\e900';
+      display: none;
+      font-family: 'custom-icons';
+      font-size: 28px;
+      position: absolute;
+      right: 18.5px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.3s ease-out;
+
+      @media only screen and (max-width: @tablet) {
+        display: block;
       }
     }
   }
   
 
   .block-content {
-    @media screen and (max-width: @tablet) {
+    @media only screen and (max-width: @tablet) {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.5s ease-out;
@@ -44,7 +47,7 @@
     }
   }
 
-  @media screen and (max-width: @tablet) {
+  @media only screen and (max-width: @tablet) {
     cursor: pointer;
     margin-bottom: 20px;
     overflow: hidden;
@@ -84,6 +87,10 @@
 
   .block-title {
     color: @blue;
+
+    &::after {
+      color: @blue;
+    }
   }
 }
 
@@ -92,6 +99,10 @@
 
   .block-title {
     color: @blue-green;
+
+    &::after {
+      color: @blue-green;
+    }
   }
 }
 
@@ -100,5 +111,9 @@
 
   .block-title {
     color: @orange;
+
+    &::after {
+      color: @orange;
+    }
   }
 }
