@@ -1,0 +1,61 @@
+// =============================================================================
+//
+// @file _post.less
+// All about the post styling
+//
+// =============================================================================
+
+// Post teaser
+.node-type-post.node-teaser {
+    padding: 25.5px 0 20.5px 0;
+
+    // Header
+    .node-header {
+        font-size: initial;
+        line-height: initial;
+        margin-bottom: 16px;
+        text-transform: none;
+
+        a {
+            text-decoration: none;
+        }
+
+        a,
+        span {
+            display: block;
+        }
+
+        br {
+            display: none;
+        }
+
+        .title {
+            color: @black;
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        .subtitle {
+            color: @gray;
+            font-size: 21px;
+        }
+    }
+
+    // Content
+    .node-content {
+        p {
+            margin-top: 0;
+        }
+    }
+
+}
+
+.view {
+    .views-row {
+        border-bottom: 2px solid @gray-light;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
